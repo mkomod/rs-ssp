@@ -27,10 +27,12 @@ data {
   int ind_failure_T[N_delta];
   int ind[N_delta];
   matrix[N, P] X;
+  real<lower=0> lambda;
 }
 parameters {
-  vector[P] beta;
+  vector[P] b;
 }
 model {
-  target += pl_lpdf(X | beta, ind_sorted_T, ind_failure_T, ind, N);
+  b ~ double_exponential(0, lambda);
+  target += pl_lpdf(X | b, ind_sorted_T, ind_failure_T, ind, N);
 }
