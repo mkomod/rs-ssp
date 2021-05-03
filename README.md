@@ -3,6 +3,6 @@
 stan code for fitting survival analysis models.
 
 ```
-https://github.com/mkomod/rs-ssp
+git clone https://github.com/mkomod/rs-ssp
 ```
 
